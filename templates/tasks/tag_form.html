@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>{% if object %}Update Tag{% else %}Create Tag{% endif %}</h2>
+
+  <form method="post">
+    {% csrf_token %}
+    {% if form.errors %}
+      <div class="errors">
+        <p>Please fix the following errors:</p>
+        <ul>
+          {% for field in form %}
+            {% for error in field.errors %}
+              <li>{{ field.label }}: {{ error }}</li>
+            {% endfor %}
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+    {{ form.as_p }}
+
+    <button type="submit">{% if object %}Update{% else %}Create{% endif %}</button>
+  </form>
+
+  <a href="{% url 'tasks:tag-list' %}">Back to Tag List</a>
+{% endblock %}
