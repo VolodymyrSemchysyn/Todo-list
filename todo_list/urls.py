@@ -18,9 +18,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from tasks.views import TaskListView
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path(
-       "task/", include("task.urls", namespace="task")
+       "tasks/", include("tasks.urls")
    ),
+    path("", TaskListView.as_view(), name="index"),
 ]
