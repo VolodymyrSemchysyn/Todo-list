@@ -15,12 +15,12 @@ app_name = "tasks"
 
 urlpatterns = [
     path("", TaskListView.as_view(), name="index"),
-    path("tasks/", TaskListView.as_view(), name="task_list"),
-    path("tags/", TagListView.as_view(), name="tag_list"),
-    path("tasks/create/", TaskCreateView.as_view(), name="task_create"),
-    path("tasks/<int:pk>/update/", TaskUpdateView.as_view(), name="task_update"),
-    path("tasks/<int:pk>/delete/", TaskDeleteView.as_view(), name="task_delete"),
-    path("tags/create/", TagCreateView.as_view(), name="tag_create"),
-    path("tags/<int:pk>/update/", TagUpdateView.as_view(), name="tag_update"),
-    path("tags/<int:pk>/delete/", TagDeleteView.as_view(), name="tag_delete"),
+    path("tasks/", TaskListView.as_view(), name="task-list"),
+    path("tags/", TagListView.as_view(), name="tag-list"),
+    path("tasks/create/", TaskCreateView.as_view(), name="task-create"),
+    path("tasks/<int:pk>/update/", TaskUpdateView.as_view(), name="task-update"),
+    path("tasks/<int:pk>/delete/", TaskDeleteView.as_view(), name="task-delete"),
+    path("tags/create/", TagCreateView.as_view(), name="tag-create"),
+    path("tags/<int:pk>/update/", TagUpdateView.as_view(), name="tag-update"),
+    path("tags/<int:pk>/delete/", TagDeleteView.as_view(), name="tag-delete"),
 ]
